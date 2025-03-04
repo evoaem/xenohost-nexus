@@ -102,7 +102,7 @@
 
 @layer components {
   .glass-card {
-    @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-lg;
+    @apply bg-white border border-white/20 shadow-lg;
   }
   
   .btn-primary {
@@ -207,7 +207,7 @@
 }
 
 .animate-fade-in-up {
-  animation: fadeInUp 1s ease-out forwards;
+  animation: fadeInUp 0.4s ease-out forwards;
 }
 
 @keyframes fadeInUp {
@@ -232,4 +232,17 @@
 
 .hover\:scale-110:hover {
   transform: scale(1.1);
+}
+
+/* Remove any watermark-like elements */
+body::before,
+body::after,
+div::before,
+div::after,
+main::before,
+main::after,
+section::before,
+section::after {
+  content: none !important;
+  display: none !important;
 }

@@ -43,23 +43,23 @@ const Plan = ({ title, price, cpu, ram, storage, isPopular = false, delay }: Pla
   return (
     <div 
       ref={planRef}
-      className={`glass-card rounded-2xl p-6 transition-all duration-700 hover:shadow-xl ${
+      className={`rounded-2xl p-6 transition-all duration-700 hover:shadow-xl ${
         isVisible 
           ? 'opacity-100 translate-y-0' 
           : 'opacity-0 translate-y-12'
       } ${
         isPopular 
-          ? 'border-xenoblue/30 ring-2 ring-xenoblue/20 shadow-lg shadow-xenoblue/10 scale-105 z-10 backdrop-blur-md' 
-          : 'border-white/30 hover:scale-103 transition-transform duration-300'
+          ? 'bg-white border-2 border-xenoblue/30 shadow-lg scale-105 z-10 relative overflow-hidden' 
+          : 'bg-white border border-white/30 hover:scale-103 transition-transform duration-300'
       }`}
     >
       {isPopular && (
-        <div className="bg-xenoblue text-white text-sm font-medium px-3 py-1 rounded-full inline-block mb-4 animate-pulse">
+        <div className="bg-xenoblue text-white text-sm font-medium px-4 py-1 rounded-full inline-block mb-4 absolute top-4 left-1/2 -translate-x-1/2">
           Most Popular
         </div>
       )}
       
-      <h3 className="text-xl font-bold mb-2">{title}</h3>
+      <h3 className="text-xl font-bold mb-2 mt-4">{title}</h3>
       
       <div className="mt-4 mb-6 transition-all duration-500 hover:scale-105">
         <span className="text-4xl font-bold">${price}</span>
@@ -115,7 +115,7 @@ const Plan = ({ title, price, cpu, ram, storage, isPopular = false, delay }: Pla
         to="/checkout" 
         className={`w-full py-3 px-6 rounded-lg font-medium text-center block transition-all hover:scale-105 duration-300 ${
           isPopular 
-            ? 'bg-xenoblue text-white hover:bg-xenoblue-dark shadow-lg hover:shadow-xenoblue/20' 
+            ? 'bg-xenoblue text-white hover:bg-xenoblue-dark shadow-lg' 
             : 'bg-white text-xenoblack border border-xenoblack/10 hover:bg-xenoblue hover:text-white hover:border-transparent'
         }`}
       >

@@ -17,11 +17,26 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const scrollToSection = (sectionId: string) => {
+    if (location.pathname !== '/') {
+      window.location.href = `/${sectionId}`;
+      return;
+    }
+    
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    if (isMenuOpen) {
+      setIsMenuOpen(false);
+    }
+  };
+
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-white/90 backdrop-blur-md shadow-md py-3' 
+          ? 'bg-white shadow-md py-3' 
           : 'bg-transparent py-5'
       }`}
     >
@@ -45,18 +60,18 @@ const Navbar = () => {
           >
             Home
           </Link>
-          <a 
-            href={location.pathname === '/' ? '#pricing' : '/'}
-            className="font-medium text-xenoblack/80 hover:text-xenoblue transition-colors"
+          <button 
+            onClick={() => scrollToSection('pricing')}
+            className="font-medium text-xenoblack/80 hover:text-xenoblue transition-colors bg-transparent border-none cursor-pointer"
           >
             Pricing
-          </a>
-          <a 
-            href={location.pathname === '/' ? '#contact' : '/'}
-            className="font-medium text-xenoblack/80 hover:text-xenoblue transition-colors"
+          </button>
+          <button 
+            onClick={() => scrollToSection('contact')}
+            className="font-medium text-xenoblack/80 hover:text-xenoblue transition-colors bg-transparent border-none cursor-pointer"
           >
             Contact
-          </a>
+          </button>
           <Link 
             to="/checkout" 
             className="btn-primary py-2 hover:scale-105 transition-transform duration-300"
@@ -88,20 +103,18 @@ const Navbar = () => {
             >
               Home
             </Link>
-            <a 
-              href={location.pathname === '/' ? '#pricing' : '/'}
-              className="font-medium text-xenoblack/80 hover:text-xenoblue py-2 transition-colors"
-              onClick={() => setIsMenuOpen(false)}
+            <button 
+              onClick={() => scrollToSection('pricing')}
+              className="font-medium text-xenoblack/80 hover:text-xenoblue py-2 transition-colors bg-transparent border-none cursor-pointer text-left"
             >
               Pricing
-            </a>
-            <a 
-              href={location.pathname === '/' ? '#contact' : '/'}
-              className="font-medium text-xenoblack/80 hover:text-xenoblue py-2 transition-colors"
-              onClick={() => setIsMenuOpen(false)}
+            </button>
+            <button 
+              onClick={() => scrollToSection('contact')}
+              className="font-medium text-xenoblack/80 hover:text-xenoblue py-2 transition-colors bg-transparent border-none cursor-pointer text-left"
             >
               Contact
-            </a>
+            </button>
             <Link 
               to="/checkout" 
               className="btn-primary text-center py-2 mt-2"
