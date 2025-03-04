@@ -43,31 +43,31 @@ const Plan = ({ title, price, cpu, ram, storage, isPopular = false, delay }: Pla
   return (
     <div 
       ref={planRef}
-      className={`glass-card rounded-2xl p-6 transition-all duration-700 ${
+      className={`glass-card rounded-2xl p-6 transition-all duration-700 hover:shadow-xl ${
         isVisible 
           ? 'opacity-100 translate-y-0' 
           : 'opacity-0 translate-y-12'
       } ${
         isPopular 
-          ? 'border-xenoblue/30 ring-2 ring-xenoblue/20 shadow-lg shadow-xenoblue/10 scale-105 z-10' 
-          : 'border-white/30'
+          ? 'border-xenoblue/30 ring-2 ring-xenoblue/20 shadow-lg shadow-xenoblue/10 scale-105 z-10 backdrop-blur-md' 
+          : 'border-white/30 hover:scale-103 transition-transform duration-300'
       }`}
     >
       {isPopular && (
-        <div className="bg-xenoblue text-white text-sm font-medium px-3 py-1 rounded-full inline-block mb-4">
+        <div className="bg-xenoblue text-white text-sm font-medium px-3 py-1 rounded-full inline-block mb-4 animate-pulse">
           Most Popular
         </div>
       )}
       
       <h3 className="text-xl font-bold mb-2">{title}</h3>
       
-      <div className="mt-4 mb-6">
+      <div className="mt-4 mb-6 transition-all duration-500 hover:scale-105">
         <span className="text-4xl font-bold">${price}</span>
         <span className="text-xenoblack/60">/month</span>
       </div>
       
       <div className="space-y-6 mb-8">
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 hover:translate-x-1 transition-transform duration-300">
           <Cpu className="w-5 h-5 text-xenoblue flex-shrink-0" />
           <div>
             <p className="font-medium">{cpu} vCores</p>
@@ -75,7 +75,7 @@ const Plan = ({ title, price, cpu, ram, storage, isPopular = false, delay }: Pla
           </div>
         </div>
         
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 hover:translate-x-1 transition-transform duration-300">
           <Server className="w-5 h-5 text-xenoblue flex-shrink-0" />
           <div>
             <p className="font-medium">{ram} GB RAM</p>
@@ -83,7 +83,7 @@ const Plan = ({ title, price, cpu, ram, storage, isPopular = false, delay }: Pla
           </div>
         </div>
         
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 hover:translate-x-1 transition-transform duration-300">
           <HardDrive className="w-5 h-5 text-xenoblue flex-shrink-0" />
           <div>
             <p className="font-medium">{storage} GB SSD</p>
@@ -93,19 +93,19 @@ const Plan = ({ title, price, cpu, ram, storage, isPopular = false, delay }: Pla
       </div>
       
       <div className="space-y-3 mb-8">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 hover:translate-x-1 transition-transform duration-200">
           <Check className="w-4 h-4 text-xenoblue" />
           <span className="text-sm">99.9% Uptime Guarantee</span>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 hover:translate-x-1 transition-transform duration-200">
           <Check className="w-4 h-4 text-xenoblue" />
           <span className="text-sm">24/7 Technical Support</span>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 hover:translate-x-1 transition-transform duration-200">
           <Check className="w-4 h-4 text-xenoblue" />
           <span className="text-sm">DDoS Protection</span>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 hover:translate-x-1 transition-transform duration-200">
           <Check className="w-4 h-4 text-xenoblue" />
           <span className="text-sm">Full Root Access</span>
         </div>
@@ -113,7 +113,7 @@ const Plan = ({ title, price, cpu, ram, storage, isPopular = false, delay }: Pla
       
       <Link 
         to="/checkout" 
-        className={`w-full py-3 px-6 rounded-lg font-medium text-center block transition-all ${
+        className={`w-full py-3 px-6 rounded-lg font-medium text-center block transition-all hover:scale-105 duration-300 ${
           isPopular 
             ? 'bg-xenoblue text-white hover:bg-xenoblue-dark shadow-lg hover:shadow-xenoblue/20' 
             : 'bg-white text-xenoblack border border-xenoblack/10 hover:bg-xenoblue hover:text-white hover:border-transparent'
@@ -127,9 +127,9 @@ const Plan = ({ title, price, cpu, ram, storage, isPopular = false, delay }: Pla
 
 const PricingPlans = () => {
   return (
-    <section id="pricing" className="section relative">
+    <section id="pricing" className="section relative overflow-hidden">
       <div className="container-custom">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in">
           <div className="inline-block px-3 py-1 mb-4 bg-xenoblue/10 text-xenoblue rounded-full text-sm font-medium">
             Pricing Plans
           </div>

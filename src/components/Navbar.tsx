@@ -1,11 +1,12 @@
 
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { Server, Mail, Menu, X } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
+import { Server, Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,25 +39,27 @@ const Navbar = () => {
         <nav className="hidden md:flex items-center gap-8">
           <Link 
             to="/" 
-            className="font-medium text-xenoblack/80 hover:text-xenoblue transition-colors"
+            className={`font-medium hover:text-xenoblue transition-colors ${
+              location.pathname === '/' ? 'text-xenoblue' : 'text-xenoblack/80'
+            }`}
           >
             Home
           </Link>
           <a 
-            href="#pricing" 
+            href={location.pathname === '/' ? '#pricing' : '/'}
             className="font-medium text-xenoblack/80 hover:text-xenoblue transition-colors"
           >
             Pricing
           </a>
           <a 
-            href="#contact" 
+            href={location.pathname === '/' ? '#contact' : '/'}
             className="font-medium text-xenoblack/80 hover:text-xenoblue transition-colors"
           >
             Contact
           </a>
           <Link 
             to="/checkout" 
-            className="btn-primary py-2"
+            className="btn-primary py-2 hover:scale-105 transition-transform duration-300"
           >
             Get Started
           </Link>
@@ -78,20 +81,22 @@ const Navbar = () => {
           <div className="container-custom py-4 flex flex-col gap-4">
             <Link 
               to="/" 
-              className="font-medium text-xenoblack/80 hover:text-xenoblue py-2 transition-colors"
+              className={`font-medium hover:text-xenoblue py-2 transition-colors ${
+                location.pathname === '/' ? 'text-xenoblue' : 'text-xenoblack/80'
+              }`}
               onClick={() => setIsMenuOpen(false)}
             >
               Home
             </Link>
             <a 
-              href="#pricing" 
+              href={location.pathname === '/' ? '#pricing' : '/'}
               className="font-medium text-xenoblack/80 hover:text-xenoblue py-2 transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               Pricing
             </a>
             <a 
-              href="#contact" 
+              href={location.pathname === '/' ? '#contact' : '/'}
               className="font-medium text-xenoblack/80 hover:text-xenoblue py-2 transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >

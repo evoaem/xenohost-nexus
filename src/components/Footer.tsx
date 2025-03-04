@@ -96,28 +96,21 @@ const Footer = () => {
             </ul>
           </div>
           
-          {/* Newsletter */}
+          {/* Join Discord */}
           <div className="col-span-1">
-            <h4 className="text-lg font-semibold mb-5">Stay Updated</h4>
+            <h4 className="text-lg font-semibold mb-5">Stay Updated with Discord</h4>
             <p className="text-white/70 text-sm mb-4">
-              Get notified about new features and updates.
+              Join our Discord server to get the latest updates and support.
             </p>
-            <div className="relative">
-              <input 
-                type="email" 
-                placeholder="Your email" 
-                className="w-full px-4 py-2 pr-12 rounded-lg bg-white/10 border border-white/10 text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-xenoblue/50 transition-all"
-              />
-              <button 
-                type="button" 
-                className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-xenoblue text-white p-1 rounded"
-                aria-label="Subscribe"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                </svg>
-              </button>
-            </div>
+            <a 
+              href="https://discord.gg/vUzqTgC82s" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="inline-flex items-center gap-2 bg-indigo-600 text-white px-4 py-2 rounded-lg transition-all hover:bg-indigo-700 hover:scale-105"
+            >
+              <MessageSquare size={16} />
+              <span>Join Discord</span>
+            </a>
           </div>
         </div>
         
