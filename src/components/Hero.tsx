@@ -24,9 +24,24 @@ const Hero = () => {
             <div className="inline-block px-3 py-1 mb-6 bg-xenoblue/10 text-xenoblue rounded-full text-sm font-medium animate-fade-in">
               High-Performance Virtual Private Servers
             </div>
-            <h1 className="mb-6 font-bold text-xenoblack animate-fade-in-up">
-              Powerful VPS Hosting for Your Digital <span className="text-xenoblue">Infrastructure</span>
-            </h1>
+            <div className="flex flex-col md:flex-row items-center md:items-start gap-4 mb-6">
+              <h1 className="font-bold text-xenoblack animate-fade-in-up">
+                Powerful VPS Hosting for Your Digital <span className="text-xenoblue">Infrastructure</span>
+              </h1>
+              <div className="relative w-full md:w-32 h-24 rounded-lg overflow-hidden animate-fade-in-up shadow-lg border border-xenoblue/20" style={{animationDelay: "150ms"}}>
+                <video 
+                  className="absolute inset-0 w-full h-full object-cover"
+                  autoPlay 
+                  loop 
+                  muted 
+                  playsInline
+                >
+                  <source src="https://cdn.pixabay.com/vimeo/414364927/server-39517.mp4?width=640&hash=9d8bca68ca7720c25cf46efcd42d2e17ddfb05ea" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+                <div className="absolute inset-0 bg-xenoblue/10 backdrop-blur-sm"></div>
+              </div>
+            </div>
             <p className="text-lg md:text-xl text-xenoblack/70 mb-8 leading-relaxed animate-fade-in-up" style={{animationDelay: "200ms"}}>
               Experience lightning-fast performance with our premium VPS solutions. 
               Optimized for speed, stability, and security at unbeatable prices.

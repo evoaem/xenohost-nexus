@@ -1,18 +1,34 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>xenohost-nexus</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
+    <meta name="description" content="Premium VPS Hosting Services" />
+    <meta name="author" content="XenoHost" />
     <meta property="og:image" content="/og-image.png" />
+
+    <!-- Add custom CSS to hide any potential Lovable watermarks -->
+    <style>
+      [class*="lovable-badge"],
+      [class*="lovable-watermark"],
+      [id*="lovable-badge"],
+      [id*="lovable-watermark"],
+      [data-lovable],
+      .powered-by-lovable,
+      .made-with-lovable,
+      [src*="cdn.gpteng.co"] {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+      }
+    </style>
   </head>
 
   <body>
     <div id="root"></div>
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
