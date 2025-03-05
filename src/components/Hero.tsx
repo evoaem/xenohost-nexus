@@ -64,19 +64,12 @@ const Hero = () => {
             </div>
           </div>
           
-          {/* Hero Animation */}
+          {/* Hero Animation - Now just the video without the macOS-style frame */}
           <div className={`relative flex-1 transition-all duration-700 delay-300 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'}`}>
             <div className="relative w-full max-w-md mx-auto">
-              <div className="relative rounded-xl overflow-hidden shadow-2xl border border-xenoblue/20">
-                <div className="absolute top-0 left-0 right-0 h-8 bg-[#f0f0f0] flex items-center px-4 z-10">
-                  <div className="flex gap-2">
-                    <div className="w-3 h-3 rounded-full bg-[#ff605c]"></div>
-                    <div className="w-3 h-3 rounded-full bg-[#ffbd44]"></div>
-                    <div className="w-3 h-3 rounded-full bg-[#00ca4e]"></div>
-                  </div>
-                </div>
+              <div className="relative rounded-xl overflow-hidden shadow-2xl">
                 <video 
-                  className="w-full aspect-video object-cover"
+                  className="w-full aspect-video object-cover rounded-xl"
                   autoPlay 
                   loop 
                   muted 
