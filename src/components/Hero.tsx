@@ -28,7 +28,7 @@ const Hero = () => {
               <h1 className="font-bold text-xenoblack animate-fade-in-up">
                 Powerful VPS Hosting for Your Digital <span className="text-xenoblue">Infrastructure</span>
               </h1>
-              <div className="relative w-full md:w-32 h-24 rounded-lg overflow-hidden animate-fade-in-up shadow-lg border border-xenoblue/20" style={{animationDelay: "150ms"}}>
+              <div className="relative w-full md:w-48 h-36 rounded-lg overflow-hidden animate-fade-in-up shadow-lg border border-xenoblue/20" style={{animationDelay: "150ms"}}>
                 <video 
                   className="absolute inset-0 w-full h-full object-cover"
                   autoPlay 
@@ -36,10 +36,10 @@ const Hero = () => {
                   muted 
                   playsInline
                 >
-                  <source src="https://cdn.pixabay.com/vimeo/414364927/server-39517.mp4?width=640&hash=9d8bca68ca7720c25cf46efcd42d2e17ddfb05ea" type="video/mp4" />
+                  <source src="https://cdn.pixabay.com/vimeo/527847213/dashboard-60710.mp4?width=640&hash=00c3d08a81cc442d8b8c0b46c834a39f89b6e09e" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
-                <div className="absolute inset-0 bg-xenoblue/10 backdrop-blur-sm"></div>
+                <div className="absolute inset-0 bg-xenoblue/5 backdrop-blur-sm"></div>
               </div>
             </div>
             <p className="text-lg md:text-xl text-xenoblack/70 mb-8 leading-relaxed animate-fade-in-up" style={{animationDelay: "200ms"}}>

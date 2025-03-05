@@ -12,12 +12,13 @@ const CartWidget = () => {
     <div className="relative">
       <button 
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-1 px-3 py-2 text-xenoblack/80 hover:text-xenoblue transition-colors relative"
+        className="flex items-center gap-2 px-4 py-2 bg-xenoblue/10 hover:bg-xenoblue/20 text-xenoblue rounded-lg transition-colors relative"
         aria-label="Shopping Cart"
       >
-        <ShoppingCart className="w-5 h-5" />
+        <ShoppingCart className="w-6 h-6" />
+        <span className="font-medium">Cart</span>
         {totalItems > 0 && (
-          <span className="absolute -top-1 -right-1 bg-xenoblue text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+          <span className="absolute -top-2 -right-2 bg-xenoblue text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center">
             {totalItems}
           </span>
         )}
