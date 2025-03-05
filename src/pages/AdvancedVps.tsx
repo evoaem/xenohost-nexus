@@ -1,9 +1,10 @@
 
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Check, Server, HardDrive, Cpu, Globe } from 'lucide-react';
+import { Check, Server, HardDrive, Cpu, Globe, ShoppingCart } from 'lucide-react';
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { useCart } from '../hooks/useCart';
 
 interface VpsOption {
   id: string;
@@ -18,6 +19,7 @@ interface VpsOption {
 const AdvancedVps = () => {
   const [selectedCategory, setSelectedCategory] = useState<'budget' | 'standard' | 'performance'>('budget');
   const [animateCards, setAnimateCards] = useState(false);
+  const { addToCart } = useCart();
   
   useEffect(() => {
     // Reset animation when category changes
@@ -150,12 +152,13 @@ const AdvancedVps = () => {
                   </div>
                 </div>
                 
-                <Link 
-                  to="/checkout" 
-                  className="w-full py-2 px-4 rounded-lg bg-xenoblue text-white font-medium text-center block hover:bg-xenoblue-dark transition-colors hover:scale-105 duration-300"
+                <button 
+                  onClick={() => addToCart(option)}
+                  className="w-full py-2 px-4 rounded-lg bg-xenoblue text-white font-medium text-center block hover:bg-xenoblue-dark transition-colors hover:scale-105 duration-300 flex items-center justify-center gap-2"
                 >
-                  Select Plan
-                </Link>
+                  <ShoppingCart className="w-4 h-4" />
+                  Add to Cart
+                </button>
               </div>
             ))}
           </div>

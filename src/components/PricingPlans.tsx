@@ -1,7 +1,8 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Check, Server, HardDrive, Cpu } from 'lucide-react';
+import { Check, Server, HardDrive, Cpu, ShoppingCart } from 'lucide-react';
+import { useCart } from '../hooks/useCart';
 
 interface PlanProps {
   title: string;
@@ -11,11 +12,13 @@ interface PlanProps {
   storage: number;
   isPopular?: boolean;
   delay: number;
+  id: string;
 }
 
-const Plan = ({ title, price, cpu, ram, storage, isPopular = false, delay }: PlanProps) => {
+const Plan = ({ id, title, price, cpu, ram, storage, isPopular = false, delay }: PlanProps) => {
   const [isVisible, setIsVisible] = useState(false);
   const planRef = useRef<HTMLDivElement>(null);
+  const { addToCart } = useCart();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -111,16 +114,17 @@ const Plan = ({ title, price, cpu, ram, storage, isPopular = false, delay }: Pla
         </div>
       </div>
       
-      <Link 
-        to="/checkout" 
-        className={`w-full py-3 px-6 rounded-lg font-medium text-center block transition-all hover:scale-105 duration-300 ${
+      <button 
+        onClick={() => addToCart({ id, name: title, price, cpu, ram, storage })}
+        className={`w-full py-3 px-6 rounded-lg font-medium text-center block transition-all hover:scale-105 duration-300 flex items-center justify-center gap-2 ${
           isPopular 
             ? 'bg-xenoblue text-white hover:bg-xenoblue-dark shadow-lg' 
             : 'bg-white text-xenoblack border border-xenoblack/10 hover:bg-xenoblue hover:text-white hover:border-transparent'
         }`}
       >
-        Buy Now
-      </Link>
+        <ShoppingCart className="w-4 h-4" />
+        Add to Cart
+      </button>
     </div>
   );
 };
@@ -142,6 +146,7 @@ const PricingPlans = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
           <Plan 
+            id="standard"
             title="Standard VPS" 
             price={7} 
             cpu={8} 
@@ -151,6 +156,7 @@ const PricingPlans = () => {
           />
           
           <Plan 
+            id="premium"
             title="Premium VPS" 
             price={10} 
             cpu={12} 
@@ -161,6 +167,7 @@ const PricingPlans = () => {
           />
           
           <Plan 
+            id="business"
             title="Business VPS" 
             price={14} 
             cpu={20} 

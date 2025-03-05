@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Server, Menu, X } from 'lucide-react';
+import CartWidget from './CartWidget';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -72,6 +73,9 @@ const Navbar = () => {
           >
             Contact
           </button>
+          
+          <CartWidget />
+          
           <Link 
             to="/checkout" 
             className="btn-primary py-2 hover:scale-105 transition-transform duration-300"
@@ -81,13 +85,16 @@ const Navbar = () => {
         </nav>
 
         {/* Mobile Menu Button */}
-        <button 
-          className="md:hidden text-xenoblack" 
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label={isMenuOpen ? 'Close Menu' : 'Open Menu'}
-        >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="flex items-center gap-4 md:hidden">
+          <CartWidget />
+          <button 
+            className="text-xenoblack" 
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label={isMenuOpen ? 'Close Menu' : 'Open Menu'}
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
