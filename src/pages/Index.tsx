@@ -2,6 +2,7 @@
 import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
 import PricingPlans from "../components/PricingPlans";
+import CustomVpsOptions from "../components/CustomVpsOptions";
 import ContactSection from "../components/ContactSection";
 import Footer from "../components/Footer";
 
@@ -12,6 +13,7 @@ const Index = () => {
       <main>
         <Hero />
         <PricingPlans />
+        <CustomVpsOptions />
         <ContactSection />
       </main>
       <Footer />
