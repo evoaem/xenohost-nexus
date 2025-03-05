@@ -24,24 +24,9 @@ const Hero = () => {
             <div className="inline-block px-3 py-1 mb-6 bg-xenoblue/10 text-xenoblue rounded-full text-sm font-medium animate-fade-in">
               High-Performance Virtual Private Servers
             </div>
-            <div className="flex flex-col md:flex-row items-center md:items-start gap-4 mb-6">
-              <h1 className="font-bold text-xenoblack animate-fade-in-up">
-                Powerful VPS Hosting for Your Digital <span className="text-xenoblue">Infrastructure</span>
-              </h1>
-              <div className="relative w-full md:w-48 h-36 rounded-lg overflow-hidden animate-fade-in-up shadow-lg border border-xenoblue/20" style={{animationDelay: "150ms"}}>
-                <video 
-                  className="absolute inset-0 w-full h-full object-cover"
-                  autoPlay 
-                  loop 
-                  muted 
-                  playsInline
-                >
-                  <source src="https://cdn.pixabay.com/vimeo/527847213/dashboard-60710.mp4?width=640&hash=00c3d08a81cc442d8b8c0b46c834a39f89b6e09e" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-                <div className="absolute inset-0 bg-xenoblue/5 backdrop-blur-sm"></div>
-              </div>
-            </div>
+            <h1 className="font-bold text-xenoblack mb-6 animate-fade-in-up">
+              Powerful VPS Hosting for Your Digital <span className="text-xenoblue">Infrastructure</span>
+            </h1>
             <p className="text-lg md:text-xl text-xenoblack/70 mb-8 leading-relaxed animate-fade-in-up" style={{animationDelay: "200ms"}}>
               Experience lightning-fast performance with our premium VPS solutions. 
               Optimized for speed, stability, and security at unbeatable prices.
@@ -79,39 +64,27 @@ const Hero = () => {
             </div>
           </div>
           
-          {/* Hero Image */}
+          {/* Hero Animation */}
           <div className={`relative flex-1 transition-all duration-700 delay-300 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'}`}>
-            <div className="relative w-full aspect-square max-w-md mx-auto">
-              <div className="absolute inset-0 bg-gradient-to-br from-xenoblue/20 to-xenoblue-light/10 rounded-3xl transform rotate-6 animate-float"></div>
-              <div className="absolute inset-0 glass-card rounded-3xl shadow-xl overflow-hidden border border-white/40 hover:shadow-2xl hover:border-xenoblue/30 transition-all duration-500">
-                <div className="absolute top-0 left-0 right-0 h-12 bg-xenoblack/5 flex items-center px-4">
+            <div className="relative w-full max-w-md mx-auto">
+              <div className="relative rounded-xl overflow-hidden shadow-2xl border border-xenoblue/20">
+                <div className="absolute top-0 left-0 right-0 h-8 bg-[#f0f0f0] flex items-center px-4 z-10">
                   <div className="flex gap-2">
-                    <div className="w-3 h-3 rounded-full bg-red-400"></div>
-                    <div className="w-3 h-3 rounded-full bg-amber-400"></div>
-                    <div className="w-3 h-3 rounded-full bg-green-400"></div>
+                    <div className="w-3 h-3 rounded-full bg-[#ff605c]"></div>
+                    <div className="w-3 h-3 rounded-full bg-[#ffbd44]"></div>
+                    <div className="w-3 h-3 rounded-full bg-[#00ca4e]"></div>
                   </div>
                 </div>
-                <div className="pt-16 px-8 pb-8">
-                  <div className="bg-xenoblack/5 rounded-lg p-4 mb-4">
-                    <div className="h-2 w-3/4 bg-xenoblue/20 rounded-full mb-2"></div>
-                    <div className="h-2 w-1/2 bg-xenoblue/20 rounded-full"></div>
-                  </div>
-                  <div className="flex gap-2 mb-4">
-                    <div className="h-8 w-8 rounded-lg bg-xenoblue/20"></div>
-                    <div className="flex-1">
-                      <div className="h-2 w-full bg-xenoblack/10 rounded-full mb-2"></div>
-                      <div className="h-2 w-2/3 bg-xenoblack/10 rounded-full"></div>
-                    </div>
-                  </div>
-                  <div className="bg-xenoblack/5 rounded-lg p-4 mb-4">
-                    <div className="h-2 w-full bg-xenoblue/20 rounded-full mb-2"></div>
-                    <div className="h-2 w-3/4 bg-xenoblue/20 rounded-full mb-2"></div>
-                    <div className="h-2 w-1/2 bg-xenoblue/20 rounded-full"></div>
-                  </div>
-                  <div className="flex justify-end">
-                    <div className="h-8 w-24 rounded-lg bg-xenoblue/30"></div>
-                  </div>
-                </div>
+                <video 
+                  className="w-full aspect-video object-cover"
+                  autoPlay 
+                  loop 
+                  muted 
+                  playsInline
+                >
+                  <source src="https://cdn.pixabay.com/vimeo/491374885/code-68217.mp4?width=1280&hash=5e3e9595ae9c7e21a02b5b5aac8c48f4765822bc" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
               </div>
             </div>
           </div>
